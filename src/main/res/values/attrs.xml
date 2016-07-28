@@ -16,11 +16,11 @@
         <attr name="pstsTabBackground" format="reference" />
         <attr name="pstsTabTextSize" format="dimension" />
         <attr name="pstsTabTextColor" format="reference" />
-        <attr name="pstsTabTextStyle" format="reference">
-            <flag name="normal" value="0x0" />
-            <flag name="bold" value="0x1" />
-            <flag name="italic" value="0x2" />
-			<flag name="coded" value="0x3" />
+        <attr name="pstsTabTextStyle" format="enum">
+            <enum name="normal" value="0x0" />
+            <enum name="bold" value="0x1" />
+            <enum name="italic" value="0x2" />
+			<enum name="coded" value="0x3" />
         </attr>
         <attr name="pstsTabTextAllCaps" format="boolean" />
         <attr name="pstsTabTextAlpha" format="integer" />
