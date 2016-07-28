@@ -120,7 +120,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         super(context, attrs, defStyle);
         setFillViewport(true);
         setWillNotDraw(false);
-        mTabsContainer = new LinearLayout(context);
+        mTabsContainer = (LinearLayout)LayoutInflater.from(context).inflate(R.layout.psts_container,this,false);
         mTabsContainer.setOrientation(LinearLayout.HORIZONTAL);
         addView(mTabsContainer);
 
@@ -196,7 +196,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         if (fontFamily != null) {
             tabTextTypefaceName = fontFamily;
         }
-        mTabTextTypeface = Typeface.create(tabTextTypefaceName, mTabTextTypefaceStyle);
+		if(mTabTextTypefaceStyle!=3){
+        	mTabTextTypeface = Typeface.create(tabTextTypefaceName, mTabTextTypefaceStyle);
+		}
 
         //Bottom padding for the tabs container parent view to show indicator and underline
         setTabsContainerParentViewPaddings();
@@ -274,7 +276,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
             TextView tab_title = (TextView) v.findViewById(R.id.psts_tab_title);
             if (tab_title != null) {
                 tab_title.setTextColor(mTabTextColor);
-                tab_title.setTypeface(mTabTextTypeface, mTabTextTypefaceStyle);
+                if(mTabTextTypefaceStyle!=3){
+					tab_title.setTypeface(mTabTextTypeface, mTabTextTypefaceStyle);
+				}
                 tab_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTabTextSize);
                 // setAllCaps() is only available from API 14, so the upper case is made manually if we are on a
                 // pre-ICS-build
