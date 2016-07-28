@@ -120,7 +120,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         super(context, attrs, defStyle);
         setFillViewport(true);
         setWillNotDraw(false);
-        mTabsContainer = (LinearLayout)LayoutInflater.from(context).inflate(R.layout.psts_container,this,false);
+        mTabsContainer = new LinearLayout(context);
         mTabsContainer.setOrientation(LinearLayout.HORIZONTAL);
         addView(mTabsContainer);
 
