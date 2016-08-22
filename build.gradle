@@ -7,12 +7,13 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 21
+        jackOptions {
+			enabled true
+		}
     }
 
-    android {
-        lintOptions {
-            abortOnError false
-        }
+    lintOptions {
+        abortOnError false
     }
 }
 
